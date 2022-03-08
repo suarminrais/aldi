@@ -42,7 +42,14 @@
               <a class="nav-link" href="#Layanan" style="font-size: larger">Layanan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/login" style="font-size: larger">Login</a>
+                @if(Auth::check())
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <a class="nav-link" style="font-size: larger; cursor:pointer;" onclick="event.preventDefault();this.closest('form').submit();">Log Out</a>
+                </form>
+                @else
+                    <a class="nav-link" href="/login" style="font-size: larger">Login</a>
+                @endif
             </li>
           </ul>
         </div>
@@ -92,7 +99,7 @@
           </div>
 
           <div class="col-md-4">
-            <a href="login.html">
+            <a href="/publikasi">
               <span class="lingkaran"><i class="fas fa-upload fa-5x"></i></span>
               <h3 class="mt-3 laya">Publikasi</h3></a
             >

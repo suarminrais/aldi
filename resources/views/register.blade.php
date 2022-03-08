@@ -48,19 +48,15 @@
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
         <h2 class="akun text-center pt-5 pb-5">Buat Akun</h2>
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}">
           @csrf
           <div class="col-md-6">
-            <label for="NamaDepan" class="form-label">Nama Depan</label>
-            <input name="name" type="email" class="form-control" id="NamaDepan" placeholder="abd" />
-          </div>
-          <div class="col-md-6">
-            <label for="iNamaBelakang" class="form-label">Nama Belakang</label>
-            <input name="last_name" type="password" class="form-control" id="NamaBelakang" placeholder="Latif" />
+            <label for="NamaDepan" class="form-label">Nama Lengkap</label>
+            <input name="name" type="text" value="{{old('name')}}" class="form-control" id="NamaDepan" placeholder="abd" />
           </div>
           <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input name="email" type="email" class="form-control" id="inputEmail4" placeholder="example@gmail.com" />
+            <input name="email" value="{{old('email')}}" type="email" class="form-control" id="inputEmail4" placeholder="example@gmail.com" />
           </div>
           <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Password</label>
@@ -71,24 +67,24 @@
             <input name="password_confirmation" type="password" class="form-control" id="inputPassword2" />
           </div>
           <div class="col-12">
-            <label for="inputAddress" class="form-label">Alamat</label>
-            <input name="address" type="text" class="form-control" id="inputAddress" placeholder="Jl.example" />
+            <label for="inputAddress"  class="form-label">Alamat</label>
+            <input name="address" value="{{old('address')}}" type="text" class="form-control" id="inputAddress" placeholder="Jl.example" />
           </div>
           <div class="col-12">
             <label for="inputAddress2" class="form-label">Institusi</label>
-            <input name="institution" type="text" class="form-control" id="inputAddress2" placeholder="Institusi atau kantor" />
+            <input name="institution" value="{{old('institution')}}" type="text" class="form-control" id="inputAddress2" placeholder="Institusi atau kantor" />
           </div>
           <div class="col-md-6">
             <label for="inputCity" class="form-label">Nomer Ponsel</label>
-            <input name="phone" type="text" class="form-control" id="inputCity" placeholder="088xxxxxx" />
+            <input name="phone" value="{{old('phone')}}" type="text" class="form-control" id="inputCity" placeholder="088xxxxxx" />
           </div>
           <div class="col-md-2">
             <label for="inputZip" class="form-label">Pos</label>
-            <input name="postal_code" type="text" class="form-control" id="inputZip" />
+            <input name="postal_code" value="{{old('postal_code')}}" type="text" class="form-control" id="inputZip" />
           </div>
           <div class="col-md-6">
             <label for="formFile" class="form-label">Kartu Identitas</label>
-            <input name="image" class="form-control" type="file" id="formFile" />
+            <input name="image" class="form-control" type="file" id="formFile" accept="image/*" />
           </div>
           <div class="col-12">
             <div class="form-check">

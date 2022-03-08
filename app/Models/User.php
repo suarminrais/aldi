@@ -22,7 +22,6 @@ class User extends Authenticatable
         'email',
         'type',
         'password',
-        'last_name',
         'address',
         'institution',
         'phone',
@@ -51,5 +50,10 @@ class User extends Authenticatable
     public function image()
     {
         return $this->morphOne(Image::class, 'imageable');
+    }
+
+    public function penelitians()
+    {
+        return $this->hasMany(Penelitian::class);
     }
 }

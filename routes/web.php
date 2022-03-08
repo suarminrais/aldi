@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    PenelitianController,
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +19,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/sukses', function () {
+    return view('sukses');
+});
+
+Route::get('/sukses-upload', function () {
+    return view('sukses-upload');
+});
+
+Route::middleware(['auth'])->get('/publikasi', [PenelitianController::class, 'index']);
+Route::middleware(['auth'])->post('/publikasi', [PenelitianController::class, 'store']);
 
 require __DIR__.'/auth.php';

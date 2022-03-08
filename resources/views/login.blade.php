@@ -29,10 +29,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="home.html" style="font-size: larger">Home</a>
+              <a class="nav-link" href="/" style="font-size: larger">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active"aria-current="page"  href="login.html" style="font-size: larger">Login</a>
+              <a class="nav-link active"aria-current="page"  href="/login" style="font-size: larger">Login</a>
             </li>
           </ul>
         </div>
@@ -57,18 +57,18 @@
               @csrf
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input name="email" placeholder="Masukkan email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input name="email" value="{{old('email')}}" placeholder="Masukkan email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input name="password" placeholder="Masukkan Password" type="password" class="form-control" id="exampleInputPassword1">
               </div>
               <div class="mb-3 form-check">
-                <input name="remember" type="checkbox" class="form-check-input" id="exampleCheck1">
+                <input name="remember" value="{{old('remember')}}" type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Ingat Saya</label>
               </div>
               <button type="submit" class="btn btn-primary w-100">Login</button>
-              <a class="nav-link text-center" href="/daftar">Buat Akun</a>
+              <a class="nav-link text-center" href="/register">Buat Akun</a>
             </form>
           </div>
         </div>

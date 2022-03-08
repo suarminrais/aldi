@@ -35,18 +35,17 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string'],
             'address' => ['required', 'string'],
             'institution' => ['required', 'string'],
             'phone' => ['required', 'string'],
             'postal_code' => ['required', 'string'],
+            'image' => ['required', 'image'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
-            'last_name' => $request->last_name,
             'address' => $request->address,
             'institution' => $request->institution,
             'phone' => $request->phone,
@@ -55,10 +54,16 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        if ($request->hasFile('image')) {
+            $name = time().'.jpg';
+            $request->image->storeAs('public/images', $name);
+            $user->image()->create([
+                'name' => $name
+            ]);
+        }
+
         event(new Registered($user));
 
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/sukses');
     }
 }
