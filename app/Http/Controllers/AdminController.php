@@ -48,6 +48,7 @@ class AdminController extends Controller
     public function deletePenelitian($id)
     {
         $penelitian = Penelitian::findOrFail($id);
+        $penelitian->manfaats()->detach();
         $penelitian->delete();
         return redirect()->back();
     }
