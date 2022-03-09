@@ -15,6 +15,7 @@ class Penelitian extends Model
         'tempat',
         'file',
         'description',
+        'status',
         'user_id',
     ];
 

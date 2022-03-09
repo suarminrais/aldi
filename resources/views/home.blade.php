@@ -42,14 +42,14 @@
               <a class="nav-link" href="#Layanan" style="font-size: larger">Layanan</a>
             </li>
             <li class="nav-item">
-                @if(Auth::check())
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <a class="nav-link" style="font-size: larger; cursor:pointer;" onclick="event.preventDefault();this.closest('form').submit();">Log Out</a>
-                </form>
-                @else
-                    <a class="nav-link" href="/login" style="font-size: larger">Login</a>
-                @endif
+              @if(Auth::check())
+              <form method="POST" action="{{ route('logout') }}">
+                  @csrf
+                  <a class="nav-link" style="font-size: larger; cursor:pointer;" onclick="event.preventDefault();this.closest('form').submit();">Log Out</a>
+              </form>
+              @else
+                  <a class="nav-link" href="/login" style="font-size: larger">Login</a>
+              @endif
             </li>
           </ul>
         </div>
@@ -78,12 +78,12 @@
     <!-- tampilan layanan -->
     <div class="container-fluid pt-5 pb-5 bg-light">
       <div class="container text-center">
-        <h2 class="konsul" id="Layanan">LAYANAN</h2>
+        <h3 class="konsul" id="Layanan">LAYANAN</h3>
         <p class="tagline">Silahkan pilih jenis layanan yang telah disediakan di bawah</p>
 
         <div class="row pt-4">
           <div class="col-md-4">
-            <a href="kns.html"
+            <a href="/kns"
               ><span class="lingkaran"><i class="fas fa-stethoscope fa-5x"></i></span>
               <h3 class="mt-3 laya">Konsultasi</h3></a
             >
@@ -91,7 +91,7 @@
           </div>
 
           <div class="col-md-4">
-            <a href="kamus.html">
+            <a href="/kamus">
               <span class="lingkaran"><i class="fas fa-book fa-5x"></i></span>
               <h3 class="mt-3 laya">Repository</h3></a
             >
@@ -113,65 +113,25 @@
       <div class="container text-start">
         <h6>Penelitian Terbaru</h6>
         <div class="row pt-4 gx3 gy-3">
+          @foreach($penelitians as $item)
           <div class="col-md-3">
             <div class="card" style="width: 18rem; height: auto">
-              <img src="jahe-merah.png" class="card-img-top" width="200" height="200" alt="Jahe Merah" />
+              <img src="/storage/images/{{$item->image->name}}" class="card-img-top" width="200" height="200" alt="Jahe Merah" />
               <div class="card-body">
-                <h5 class="card-title">Jahe Merah</h5>
-                <p class="card-text">
-                  Penelitian ini membuktikan bahwa ekstrak etanol jahe merah (Zingiber officinale Var. Amarum) pada konsentrasi 0,6 % b/v memiliki kemampuan paling baik untuk menurunkan kadar asam
-                  urat
-                </p>
-                <a href="#" class="link">Selengkapnya</a>
+                <h5 class="card-title">{{$item->nama}}</h5>
+                <p class="card-text">{{$item->description}}</p>
+                <a href="/publikasi/{{$item->id}}" class="link">Selengkapnya</a>
               </div>
             </div>
           </div>
-
-          <div class="col-md-3">
-            <div class="card" style="width: 18rem; height: auto">
-              <img src="daun-sirsak.png" class="card-img-top" width="200" height="200" alt="sirsak" />
-              <div class="card-body">
-                <h5 class="card-title">Daun Sirsak</h5>
-                <p class="card-text">
-                  Sirsak (Annona muricata Linn) adalah tanaman yang mudah tumbuh di banyak tempat. Nama sirsak berasal dari bahasa Belanda yaitu Zuurzak yang berarti kantung yang asam
-                </p>
-                <a href="#" class="link">Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="card" style="width: 18rem; height: auto">
-              <img src="kunyit.png" class="card-img-top" width="200" height="200" alt="Jahe Merah" />
-              <div class="card-body">
-                <h5 class="card-title">kunyit</h5>
-                <p class="card-text">
-                  Kunyit mempunyai khasiat sebagai jamu dan obat tradisonal untuk berbagai jenis penyakit. senyawa yang terkandung dalam kunyit berperan sebagai obat dan antioksidan
-                </p>
-                <a href="#" class="link">Selengkapnya</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="card" style="width: 18rem; height: auto">
-              <img src="lidah-buaya.png" class="card-img-top" width="200" height="200" alt="Jahe Merah" />
-              <div class="card-body">
-                <h5 class="card-title">Lidah Buaya</h5>
-                <p class="card-text">
-                  Lidah Buaya Dapat Mengobati wasir, menyembuhkan luka, mengobati bisul, mengobati ketobe, menjadi sunblock, mencegah penuaan dini, mengurangi bekas stretch mark.
-                </p>
-                <a href="#" class="link">Selengkapnya</a>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
     <!-- tentang -->
     <div class="container-fluid pt-5 pb-5 bg-light">
       <div class="container">
-        <h2 class="text-center konsul" id="tentang">TENTANG</h2>
+        <h3 class="text-center konsul" id="tentang">TENTANG</h3>
         <p class="text-center">Nature Health adalah website untuk melihat struktur tanaman yang dapat digunakan oleh masyarakat dan peneliti</p>
         <div class="clearfix pt-5">
           <img src="logo2.png" class="col-md-6 float-md-end mb-3" height="100px" width="auto" />

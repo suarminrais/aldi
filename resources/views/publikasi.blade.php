@@ -82,7 +82,7 @@
                 <input name="image" class="form-control" type="file" id="formFileMultiple" accept="image/*">
               </div>
               <div class="col-12 pb-2">
-                <label for="formFileMultiple" class="form-label">Silahkan Masukkan Fike Terkait</label>
+                <label for="formFileMultiple" class="form-label">Silahkan Masukkan File Terkait</label>
                 <input name="dokumen" class="form-control" type="file" id="formFileMultiple">
               </div>
               <div>
