@@ -25,7 +25,7 @@ use App\Models\{
 */
 
 Route::get('/', function () {
-    $penelitians = Penelitian::latest()->take(4)->get();
+    $penelitians = Penelitian::where('status', true)->latest()->take(4)->get();
 
     return view('home',[
         'penelitians' => $penelitians,
@@ -47,7 +47,7 @@ Route::get('/sukses', function () {
 Route::get('/kns', function (Request $request) {
     if($nama=$request->query('q')){
         $manfaat = Manfaat::findOrFail($nama);
-        $penelitians = $manfaat->penelitians;
+        $penelitians = $manfaat->penelitians()->where('status', true)->latest()->get();
     } else {
         $penelitians = [];
     }
@@ -60,9 +60,9 @@ Route::get('/kns', function (Request $request) {
 
 Route::get('/kamus', function (Request $request) {
     if($nama=$request->query('q')){
-        $penelitians = Penelitian::where('nama', 'like', "%$nama%")->latest()->get();
+        $penelitians = Penelitian::where('status', true)->where('nama', 'like', "%$nama%")->latest()->get();
     } else {
-        $penelitians = Penelitian::latest()->take(4)->get();
+        $penelitians = Penelitian::where('status', true)->latest()->take(4)->get();
     }
     return view('kamus', [
         'penelitians' => $penelitians,
