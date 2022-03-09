@@ -76,7 +76,7 @@
                           <div class="card-body">
                             <h5 class="card-title">{{$item->nama}}</h5>
                             <p class="card-text">{{$item->description}}</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            <p class="card-text"><small class="text-muted">Last updated {{date('l', strtotime($item->updated_at))}}</small></p>
                             <a href="/publikasi/{{$item->id}}" class="btn btn-link"> Lihat</a>
                             <a href="/storage/files/{{$item->file}}" class="btn btn-outline-success">Download</a>
                           </div>
