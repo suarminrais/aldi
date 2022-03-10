@@ -37,6 +37,9 @@
                  <a class="nav-link active" aria-current="page" href="#" style=" left: auto;">Master Data</a>
                </li>
                <li class="nav-item">
+                 <a class="nav-link" aria-current="page" href="/masukan" style=" left: auto;">Saran</a>
+               </li>
+               <li class="nav-item">
                 @if(Auth::check())
                 <form method="POST" action="{{ route('logout') }}">
                   @csrf

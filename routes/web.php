@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\{
     PenelitianController,
     AdminController,
+    MasukanController,
 };
 
 use App\Models\{
@@ -72,6 +73,10 @@ Route::get('/kamus', function (Request $request) {
 Route::get('/sukses-upload', function () {
     return view('sukses-upload');
 });
+
+Route::post('/masukan', [MasukanController::class, 'store']);
+Route::middleware(['auth'])->get('/masukan', [MasukanController::class, 'index']);
+Route::middleware(['auth'])->post('/masukan/{id}', [MasukanController::class, 'delete']);
 
 Route::middleware(['auth'])->get('/publikasi', [PenelitianController::class, 'index']);
 Route::middleware(['auth'])->post('/publikasi', [PenelitianController::class, 'store']);

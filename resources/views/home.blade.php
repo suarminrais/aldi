@@ -145,16 +145,19 @@
     <!-- kontak -->
     <div class="container-fluid pt-5 pb-5 about">
       <div class="container">
+        <!-- Validation Errors -->
+        <x-auth-validation-errors class="mb-4" :errors="$errors" />
         <h3 class="kontak">Kontak Kami</h3>
         <p class="">Hubungi kami jika ada masukan dan saran</p>
-        <form>
+        <form method="post" action="/masukan">
+          @csrf
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+            <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
           </div>
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Saran atau Masukan</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea name="masukan" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           <button type="submit" class="btn btn-success">Kirim</button>
         </form>
