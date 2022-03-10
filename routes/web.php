@@ -74,6 +74,15 @@ Route::get('/sukses-upload', function () {
     return view('sukses-upload');
 });
 
+
+Route::middleware(['auth'])->get('/penelitianku', function () {
+    $penelitians = \Auth::user()->penelitians;
+
+    return view('penelitianku', [
+        'penelitians' => $penelitians,
+    ]);
+});
+
 Route::post('/masukan', [MasukanController::class, 'store']);
 Route::middleware(['auth'])->get('/masukan', [MasukanController::class, 'index']);
 Route::middleware(['auth'])->post('/masukan/{id}', [MasukanController::class, 'delete']);

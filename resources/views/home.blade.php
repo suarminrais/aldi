@@ -41,6 +41,11 @@
             <li class="nav-item">
               <a class="nav-link" href="#Layanan" style="font-size: larger">Layanan</a>
             </li>
+            @if(Auth::check() && Auth::user()->type !== 'admin')
+            <li class="nav-item">
+              <a class="nav-link" href="/penelitianku" style="font-size: larger">Penelitianku</a>
+            </li>
+            @endif
             <li class="nav-item">
               @if(Auth::check())
               <form method="POST" action="{{ route('logout') }}">

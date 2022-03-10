@@ -38,8 +38,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/" style="font-size: larger">Home</a>
+              <a class="nav-link" aria-current="page" href="/" style="font-size: larger">Home</a>
             </li>
+            @if(Auth::check() && Auth::user()->type !== 'admin')
+            <li class="nav-item">
+              <a class="nav-link" href="/penelitianku" style="font-size: larger">Penelitianku</a>
+            </li>
+            @endif
             <li class="nav-item">
               @if(Auth::check())
               <form method="POST" action="{{ route('logout') }}">
