@@ -39,7 +39,7 @@
               <input name="kategori" value="{{old('kategori')}}" type="text" class="form-control" id="Kategorienelitian" placeholder="contoh : tumbuhan" />
             </div>
             <div class="col-12 pb-3">
-              <label for="Tberkembang" class="form-label">Tempat Berkembang Biak</label>
+              <label for="Tberkembang" class="form-label">Tempat Berkembang</label>
               <input name="tempat" value="{{old('tempat')}}" type="text" class="form-control" id="Tberkembang" />
             </div>
             <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">

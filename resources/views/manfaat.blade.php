@@ -62,7 +62,7 @@
              </caption>
              <thead>
                <tr>
-                 <th scope="col">No</th>
+                 <th scope="col">ID</th>
                  <th scope="col">Manfaat Tumbuhan</th>
                  <th scope="col">Konfirmasi</th>
                </tr>

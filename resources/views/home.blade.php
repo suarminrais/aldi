@@ -124,7 +124,7 @@
               <img src="/storage/images/{{$item->image->name}}" class="card-img-top" width="200" height="200" alt="Jahe Merah" />
               <div class="card-body">
                 <h5 class="card-title">{{$item->nama}}</h5>
-                <p class="card-text">{{$item->description}}</p>
+                <p class="card-text">{{strlen($item->description) > 150 ? substr($item->description, 0,150).'...' : $item->description}}</p>
                 <a href="/publikasi/{{$item->id}}" class="link">Selengkapnya</a>
               </div>
             </div>

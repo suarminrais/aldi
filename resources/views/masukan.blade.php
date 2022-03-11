@@ -62,7 +62,7 @@
              </caption>
              <thead>
                <tr>
-                 <th scope="col">No</th>
+                 <th scope="col">ID</th>
                  <th scope="col">alamat email</th>
                  <th scope="col">Saran dan Masukan</th>
                  <th scope="col">Aksi</th>
