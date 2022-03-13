@@ -73,6 +73,24 @@
                   </div>
                 </div>
               </div>
+              <div class="col-12 pb-1">
+                <div class="row">
+                  <label for="exampleFormControlTextarea1" class="form-label">Struktur Tumbuhan</label>
+                  <div class="col">
+                    <a id="tambahStruktur2" class="btn my-2 btn-success">Tambah</a>
+                  </div>
+                </div>
+                <div id="strukturIsi2">
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" required name="tumbuhan[]" class="form-control" placeholder="Struktur Tumbuhan" aria-label="manfaat">
+                    </div>
+                    <div class="col">
+                      <input type="text" required  name="dtumbuhan[]" class="form-control" placeholder="Detail" aria-label="kadar">
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="col-12 pb-2">
                 <label for="exampleFormControlTextarea1" class="form-label">Penjelasan Dari Penelitian anda</label>
                 <textarea name="description" value="{{old('description')}}" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="akar alang alang banyak ditemukan..."></textarea>
@@ -107,6 +125,20 @@
         </div>
         <div class="col">
           <input type="text" required name="kadar[]" class="form-control" placeholder="kadar" aria-label="kadar">
+        </div>
+      </div>`;
+    }
+  </script>
+   <script>
+    const tambah2 = document.getElementById('tambahStruktur2');
+    tambah2.addEventListener("click", tambahStrukturRow);
+    function tambahStrukturRow() {
+      document.getElementById("strukturIsi2").innerHTML += `<div class="row">
+        <div class="col">
+          <input type="text" required name="tumbuhan[]" class="form-control" placeholder="Struktur Tumbuhan" aria-label="manfaat">
+        </div>
+        <div class="col">
+          <input type="text" required  name="dtumbuhan[]" class="form-control" placeholder="Detail" aria-label="kadar">
         </div>
       </div>`;
     }

@@ -42,4 +42,9 @@ class Penelitian extends Model
     {
         return $this->belongsToMany(Manfaat::class);
     }
+
+    public function anatomis()
+    {
+        return $this->belongsToMany(Anatomi::class);
+    }
 }

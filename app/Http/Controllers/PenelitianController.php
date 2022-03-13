@@ -31,6 +31,8 @@ class PenelitianController extends Controller
             'manfaat' => 'required|array',
             'struktur' => 'required|array',
             'kadar' => 'required|array',
+            'tumbuhan' => 'required|array',
+            'dtumbuhan' => 'required|array',
         ]);
 
         $user = User::findOrFail(\Auth::user()->id);
@@ -65,6 +67,13 @@ class PenelitianController extends Controller
             $penelitian->strukturs()->create([
                 'struktur' => $request->struktur[$i],
                 'kadar' => $request->kadar[$i],
+            ]);
+        }
+
+        for ($i=0; $i < count($request->tumbuhan); $i++) { 
+            $penelitian->anatomis()->create([
+                'struktur' => $request->tumbuhan[$i],
+                'detail' => $request->dtumbuhan[$i],
             ]);
         }
 

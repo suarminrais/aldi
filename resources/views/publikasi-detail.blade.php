@@ -31,11 +31,30 @@
         <div class="col">
           <table class="table caption-top">
             <caption>
-              Struktur Manfaat Tumbuhan / Tanaman
+              Struktur Tumbuhan
             </caption>
             <thead>
               <tr>
-                <th scope="col">Struktur Manfaat</th>
+                <th scope="col">Struktur Tumbuhan</th>
+                <th scope="col">Manfaat</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($penelitian->anatomis as $item)
+              <tr>
+                <th scope="row">{{$item->struktur}}</th>
+                <td>{{$item->detail}}</td>
+              <tr>
+              @endforeach
+            </tbody>
+          </table>
+          <table class="table caption-top">
+            <caption>
+              Struktur Senyawa
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Struktur Kandungan</th>
                 <th scope="col">Kadar</th>
               </tr>
             </thead>
