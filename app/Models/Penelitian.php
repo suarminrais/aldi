@@ -45,6 +45,6 @@ class Penelitian extends Model
 
     public function anatomis()
     {
-        return $this->belongsToMany(Anatomi::class);
+        return $this->hasMany(Anatomi::class);
     }
 }

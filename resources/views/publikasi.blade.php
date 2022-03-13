@@ -58,24 +58,6 @@
               @endforeach
               <div class="col-12 pb-1">
                 <div class="row">
-                  <label for="exampleFormControlTextarea1" class="form-label">Struktur Manfaat Yang Terkandung</label>
-                  <div class="col">
-                    <a id="tambahStruktur" class="btn my-2 btn-success">Tambah</a>
-                  </div>
-                </div>
-                <div id="strukturIsi">
-                  <div class="row">
-                    <div class="col">
-                      <input type="text" required name="struktur[]" class="form-control" placeholder="Struktur Manfaat" aria-label="manfaat">
-                    </div>
-                    <div class="col">
-                      <input type="text" required  name="kadar[]" class="form-control" placeholder="kadar" aria-label="kadar">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 pb-1">
-                <div class="row">
                   <label for="exampleFormControlTextarea1" class="form-label">Struktur Tumbuhan</label>
                   <div class="col">
                     <a id="tambahStruktur2" class="btn my-2 btn-success">Tambah</a>
@@ -88,6 +70,24 @@
                     </div>
                     <div class="col">
                       <input type="text" required  name="dtumbuhan[]" class="form-control" placeholder="Detail" aria-label="kadar">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 pb-1">
+                <div class="row">
+                  <label for="exampleFormControlTextarea1" class="form-label">Struktur Senyawa</label>
+                  <div class="col">
+                    <a id="tambahStruktur" class="btn my-2 btn-success">Tambah</a>
+                  </div>
+                </div>
+                <div id="strukturIsi">
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" required name="struktur[]" class="form-control" placeholder="Struktur Manfaat" aria-label="manfaat">
+                    </div>
+                    <div class="col">
+                      <input type="text" required  name="kadar[]" class="form-control" placeholder="kadar" aria-label="kadar">
                     </div>
                   </div>
                 </div>
