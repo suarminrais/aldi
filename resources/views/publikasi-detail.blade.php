@@ -69,7 +69,7 @@
           </table>
         </div>
         <h5>{{$penelitian->nama}}</h5>
-       <p>{{$penelitian->description}}</p>
+       <p>{!!$penelitian->description!!}</p>
           <div class="card-footer">
             <small class="text-muted">Oleh {{$penelitian->user->name}}</small><br>
             <small class="text-muted">DiPublikasi 17 April 2021</small>

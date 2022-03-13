@@ -85,7 +85,7 @@
                       <div class="col-md-8">
                         <div class="card-body h-100">
                           <h5 class="card-title">{{$item->nama}}</h5>
-                          <p class="card-text">{{strlen($item->description) > 150 ? substr($item->description, 0,150).'...' : $item->description}}</p>
+                          <p class="card-text">{{strlen(strip_tags($item->description)) > 150 ? substr(strip_tags($item->description), 0,150).'...' : strip_tags($item->description)}}</p>
                           <p class="card-text"><small class="text-muted">Last updated {{date('l', strtotime($item->updated_at))}}</small></p>
                           <a href="/publikasi/{{$item->id}}" class="btn btn-link"> Lihat</a>
                           <a href="/storage/files/{{$item->file}}" class="btn btn-outline-success">Download</a>

@@ -15,6 +15,7 @@
     
     <!--stle css-->
     <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <title>upload</title>
   </head>
   <body>
@@ -93,7 +94,7 @@
               </div>
               <div class="col-12 pb-2">
                 <label for="exampleFormControlTextarea1" class="form-label">Penjelasan Dari Penelitian anda</label>
-                <textarea name="description" value="{{old('description')}}" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="akar alang alang banyak ditemukan..."></textarea>
+                <textarea name="description" value="{{old('description')}}" class="form-control" id="description" rows="3" placeholder="akar alang alang banyak ditemukan..."></textarea>
               </div>
               <div class="col-12 pb-2">
                 <label for="formFileMultiple" class="form-label">Silahkan Masukkan Gambar Terkait</label>
@@ -115,6 +116,26 @@
     </div>
     <div class="container-fluid pt-3 pb-3 text-center bg-light">All for good &copy; 2022</div>
   </body>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#description').summernote({
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+        ['style', ['style']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['table', ['table']],
+        ['insert', ['link', 'picture', 'video']],
+        ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
+    });
+  </script>
   <script>
     const tambah = document.getElementById('tambahStruktur');
     tambah.addEventListener("click", tambahStrukturRow);
